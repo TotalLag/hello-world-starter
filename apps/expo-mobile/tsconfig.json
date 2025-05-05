@@ -1,0 +1,46 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".", // Base URL relative to this tsconfig
+    "paths": {
+      // Define paths relative to this tsconfig's baseUrl
+      "@hello-world/config": ["../../packages/config/src"],
+      "@hello-world/brand": ["../../packages/brand/src"],
+      "@hello-world/ui": ["../../packages/ui/src"],
+      "@hello-world/shared": ["../../packages/shared/src"],
+      "@hello-world/auth": ["../../packages/features/auth/src"],
+      "@hello-world/dashboard": ["../../packages/features/dashboard/src"],
+      "@hello-world/features-notes": ["../../packages/features/notes/src"]
+    },
+    // Expo / React Native specific options
+    "jsx": "react-native", // Use react-native JSX mode
+    "lib": ["ES2022"], // Remove DOM libs for native
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node", // Node resolution is common for React Native
+    "strict": true, // Can often be stricter in Expo
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "noEmit": true // Expo handles emission via Metro bundler
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "index.js" // Include entry point if JS
+    // Add other specific includes like "app.json" if needed by tools
+  ],
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"],
+  "references": [
+    // Reference all packages used by expo-mobile
+    { "path": "../../packages/config" },
+    { "path": "../../packages/brand" },
+    { "path": "../../packages/ui" },
+    { "path": "../../packages/shared" },
+    { "path": "../../packages/features/auth" },
+    { "path": "../../packages/features/dashboard" },
+    { "path": "../../packages/features/notes" }
+  ]
+}

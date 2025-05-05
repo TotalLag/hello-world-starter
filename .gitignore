@@ -1,0 +1,85 @@
+# Dependencies
+node_modules/
+
+# Package logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Monorepo caches
+.turbo/
+.cache/
+
+# Yarn v2+
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Next.js
+.next/
+out/
+
+# Expo
+.expo/
+.expo-shared/
+web-build/
+
+# React Native
+android/
+ios/
+*.jks
+credentials.expo.json
+
+# Tamagui
+.tamagui/
+
+# Laravel
+/vendor/
+/public/build/
+/public/hot/
+/public/storage/
+/storage/*.key
+/storage/pail/
+/.phpunit.cache/
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+.phpactor.json
+/auth.json
+
+# Environment
+.env*
+!.env.example
+.env.backup
+.env.production
+
+# Editor directories and files
+.vscode/
+.idea/
+/.fleet/
+/.nova/
+/.zed/
+
+# Logs
+*.log
+
+# Temp files
+*.tmp
+*.swp
+*~
+
+# macOS
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Make sure Husky files are not ignored
+!.husky/
