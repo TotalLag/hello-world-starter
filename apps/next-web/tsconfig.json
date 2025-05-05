@@ -1,0 +1,47 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".", // Base URL relative to this tsconfig
+    "paths": {
+      // Define paths relative to this tsconfig's baseUrl
+      "@hello-world/config": ["../../packages/config/src"],
+      "@hello-world/brand": ["../../packages/brand/src"],
+      "@hello-world/ui": ["../../packages/ui/src"],
+      "@hello-world/shared": ["../../packages/shared/src"],
+      "@hello-world/auth": ["../../packages/features/auth/src"],
+      "@hello-world/dashboard": ["../../packages/features/dashboard/src"],
+      "@hello-world/features-notes": ["../../packages/features/notes/src"]
+    },
+    // Next.js specific options
+    "plugins": [{ "name": "next" }],
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "strict": false, // Next.js often requires less strict settings initially
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true, // Next.js handles emission
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler", // Use Bundler for Next.js 13+ App Router
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve", // Next.js handles JSX transformation
+    "incremental": true // Enable incremental compilation
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts" // Include Next.js generated types
+  ],
+  "exclude": ["node_modules", ".next", "dist"],
+  "references": [
+    // Reference all packages used by next-web
+    { "path": "../../packages/config" },
+    { "path": "../../packages/brand" },
+    { "path": "../../packages/ui" },
+    { "path": "../../packages/shared" },
+    { "path": "../../packages/features/auth" },
+    { "path": "../../packages/features/dashboard" },
+    { "path": "../../packages/features/notes" }
+  ]
+}

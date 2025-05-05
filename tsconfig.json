@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@hello-world/config": ["packages/config/src"],
+      "@hello-world/brand": ["packages/brand/src"],
+      "@hello-world/ui": ["packages/ui/src"],
+      "@hello-world/shared": ["packages/shared/src"],
+      "@hello-world/auth": ["packages/features/auth/src"],
+      "@hello-world/dashboard": ["packages/features/dashboard/src"]
+    }
+  },
+  // "files": [], // Explicitly list no files to prevent root compilation
+  "include": [],
+  "references": [
+    { "path": "./apps/next-web" },
+    { "path": "./apps/expo-mobile" },
+    // No need to reference laravel-api if it doesn't use TS build process
+    { "path": "./packages/config" },
+    { "path": "./packages/brand" },
+    { "path": "./packages/ui" },
+    { "path": "./packages/shared" },
+    { "path": "./packages/features/auth" },
+    { "path": "./packages/features/dashboard" }
+  ]
+}

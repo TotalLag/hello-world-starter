@@ -1,0 +1,14 @@
+{
+  "extends": "../../../tsconfig.base.json", // Note: path depth changes
+  "compilerOptions": {
+    "outDir": "dist",
+    "composite": true,
+    "jsx": "react-jsx" // Contains React components/hooks
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"],
+  "references": [
+    { "path": "../auth" },
+    { "path": "../../ui" }
+  ]
+}

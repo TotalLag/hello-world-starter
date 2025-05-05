@@ -1,0 +1,40 @@
+{
+  "name": "@hello-world/next-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next .turbo node_modules"
+  },
+  "dependencies": {
+    "@hello-world/auth": "*",
+    "@hello-world/brand": "*",
+    "@hello-world/shared": "*",
+    "@hello-world/ui": "*",
+    "@tamagui/config": "1.126.0",
+    "@tamagui/next-theme": "1.126.0",
+    "@tanstack/react-query": "^5.0.0",
+    "@tanstack/react-query-devtools": "^5.0.0",
+    "expo": "*",
+    "next": "14.2.14",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-native": "*",
+    "react-native-web": "^0.20.0",
+    "solito": "^4.2.2",
+    "tamagui": "*",
+    "zustand": "^4.4.0"
+  },
+  "devDependencies": {
+    "@tamagui/next-plugin": "1.126.0",
+    "@types/node": "*",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.2.0",
+    "react-native-svg": "*",
+    "typescript": "^5.6.2"
+  }
+}

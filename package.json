@@ -1,0 +1,65 @@
+{
+  "name": "hello-world-starter",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "packages/features/*"
+  ],
+  "packageManager": "yarn@4.5.0",
+  "dependencies": {
+    "@tamagui/cli": "^1.125.35"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.3",
+    "@tanstack/eslint-plugin-query": "^5.74.7",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "eslint": "^9.26.0",
+    "eslint-config-next": "^15.3.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.4.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.5.1",
+    "openapi-typescript": "^7.7.1",
+    "openapi-zod-client": "^1.18.3",
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.3",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.32.0",
+    "vitest": "^2.1.1"
+  },
+  "scripts": {
+    "dev": "turbo run dev --filter=./apps/laravel-api --filter=./apps/next-web",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "format": "biome format --write .",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "prepare": "husky install",
+    "generate-api-types": "node packages/api-types/scripts/generate-api-types.js",
+    "check-api-endpoints": "node packages/api-types/scripts/check-endpoints.js",
+    "sync-api": "cd apps/laravel-api && php artisan serve --port=8000 & sleep 2 && curl http://127.0.0.1:8000/docs/api.json -o storage/openapi.json && cd ../.. && yarn generate-api-types && cd apps/laravel-api && kill $(lsof -t -i:8000)"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ],
+    "*.{json,md,yaml,yml}": [
+      "prettier --write"
+    ]
+  },
+  "resolutions": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-native": "0.77.0",
+    "react-native-web": "^0.20.0",
+    "@types/react": "^18.2.0"
+  },
+  "engines": {
+    "node": "22",
+    "npm": "10.8"
+  }
+}
