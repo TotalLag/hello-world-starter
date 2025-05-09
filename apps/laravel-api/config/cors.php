@@ -18,11 +18,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [
-        'http://localhost:3000',
-        'http://localhost:8000', // Laravel dev server
-        // Add production URLs as needed
-    ],
+    'allowed_origins' => explode(',', env('CORS_ALLOWED_ORIGINS', 'http://localhost:3000,http://localhost:8000')),
 
     'allowed_origins_patterns' => [],
 
